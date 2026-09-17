@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigator Compass</title>
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+
+<h1 class="sr-only">Navigator Compass, with a home screen and three linked pages: CN, Exception and Rulebook</h1>
+
+<!-- Subtle compass silhouette used as the visual background. -->
+<div class="compass-watermark" aria-hidden="true">
+  <svg viewBox="0 0 600 600" fill="none">
+    <circle cx="300" cy="300" r="246" stroke="currentColor" stroke-width="4"/>
+    <circle cx="300" cy="300" r="205" stroke="currentColor" stroke-width="2" opacity=".72"/>
+    <circle cx="300" cy="300" r="118" stroke="currentColor" stroke-width="2" opacity=".55"/>
+    <path d="M300 26V574M26 300H574" stroke="currentColor" stroke-width="3" opacity=".72"/>
+    <path d="M106 106L494 494M494 106L106 494" stroke="currentColor" stroke-width="2" opacity=".42"/>
+    <path d="M300 56L352 300L300 244L248 300L300 56Z" fill="currentColor" opacity=".18"/>
+    <path d="M300 544L248 300L300 356L352 300L300 544Z" fill="currentColor" opacity=".09"/>
+    <path d="M56 300L300 248L244 300L300 352L56 300Z" fill="currentColor" opacity=".08"/>
+    <path d="M544 300L300 352L356 300L300 248L544 300Z" fill="currentColor" opacity=".12"/>
+    <circle cx="300" cy="300" r="12" fill="currentColor" opacity=".28"/>
+    <circle cx="300" cy="300" r="4" fill="currentColor" opacity=".55"/>
+  </svg>
+</div>
+
+<section class="screen active" id="screen-home">
+  <div class="home-scroll">
+    <div class="hero">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="27" stroke="currentColor" stroke-width="2.4" opacity=".9"/>
+          <path d="M32 8v48M8 32h48" stroke="currentColor" stroke-width="1.5" opacity=".45"/>
+          <path d="M32 13l8 19-8-5-8 5 8-19Z" fill="currentColor"/>
+          <path d="M32 51l-8-19 8 5 8-5-8 19Z" fill="currentColor" opacity=".32"/>
+        </svg>
+      </div>
+      <div class="hero-copy">
+        <h2><span>Navigator</span><span>Compass</span><strong>Your Way</strong></h2>
+        <p>Navigate compliance with confidence.</p>
+      </div>
+    </div>
+
+    <nav class="menu-list" aria-label="Navigator Compass sections">
+      <button class="menu-item is-featured" data-target="cn">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
+        </div>
+        <div class="menu-text"><h3>CN</h3><p>Reference codes and lookups</p></div>
+        <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </button>
+
+      <button class="menu-item" data-target="exception">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 L21 19 H3 Z"/><path d="M12 10v4M12 17h.01"/></svg>
+        </div>
+        <div class="menu-text"><h3>Exception</h3><p>Flagged items and overrides</p></div>
+        <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </button>
+
+      <button class="menu-item" data-target="rulebook">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5C5 4 5.4 3.5 6 3.5h11c.6 0 1 .5 1 1V19a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2Z"/><path d="M8 3.5V20"/></svg>
+        </div>
+        <div class="menu-text"><h3>Rulebook</h3><p>Rules and guidelines</p></div>
+        <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </button>
+    </nav>
+  </div>
+</section>
+
+<section class="screen" id="screen-cn">
+  <div class="page-shell">
+    <div class="page-header">
+      <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="page-title-group"><span class="eyebrow">NAVIGATOR COMPASS</span><h2>CN</h2><p>Reference codes and lookups</p></div>
+    </div>
+    <div class="page-content">
+      <div class="search-mock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Search codes</span></div>
+      <div class="list-card">
+        <div class="list-row"><span class="code-tag">8471.30</span><div class="row-text"><h4>Portable computers</h4><p>Reduced duty rate applies</p></div></div>
+        <div class="list-row"><span class="code-tag">8517.12</span><div class="row-text"><h4>Mobile phones</h4><p>Standard classification</p></div></div>
+        <div class="list-row"><span class="code-tag">6109.10</span><div class="row-text"><h4>Cotton t-shirts</h4><p>Preferential origin required</p></div></div>
+        <div class="list-row"><span class="code-tag">9403.60</span><div class="row-text"><h4>Wooden furniture</h4><p>Additional documentation needed</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="screen-exception">
+  <div class="page-shell">
+    <div class="page-header">
+      <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="page-title-group"><span class="eyebrow">NAVIGATOR COMPASS</span><h2>Exception</h2><p>Flagged items and overrides</p></div>
+    </div>
+    <div class="page-content">
+      <div class="list-card">
+        <div class="list-row"><div class="row-text"><h4>Preferential origin waiver</h4><p>Applies to shipment batch 4471</p></div><span class="badge badge-success">Active</span></div>
+        <div class="list-row"><div class="row-text"><h4>Anti-dumping duty override</h4><p>Awaiting compliance sign-off</p></div><span class="badge badge-warning">Pending</span></div>
+        <div class="list-row"><div class="row-text"><h4>Quota exemption</h4><p>Expired at end of quarter</p></div><span class="badge badge-neutral">Expired</span></div>
+        <div class="list-row"><div class="row-text"><h4>Manual reclassification</h4><p>Requested by trade desk</p></div><span class="badge badge-warning">Pending</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="screen-rulebook">
+  <div class="page-shell">
+    <div class="page-header">
+      <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="page-title-group"><span class="eyebrow">NAVIGATOR COMPASS</span><h2>Rulebook</h2><p>Rules and guidelines</p></div>
+    </div>
+    <div class="page-content">
+      <div class="list-card">
+        <div class="list-row"><span class="chapter-num">1</span><div class="row-text"><h4>General provisions</h4><p>Scope and definitions</p></div></div>
+        <div class="list-row"><span class="chapter-num">2</span><div class="row-text"><h4>Classification rules</h4><p>How codes are assigned</p></div></div>
+        <div class="list-row"><span class="chapter-num">3</span><div class="row-text"><h4>Origin determination</h4><p>Preferential and non-preferential</p></div></div>
+        <div class="list-row"><span class="chapter-num">4</span><div class="row-text"><h4>Valuation methods</h4><p>Customs value calculation</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="sidepanel.js"></script>
+</body>
+</html>
