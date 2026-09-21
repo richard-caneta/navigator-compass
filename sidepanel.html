@@ -8,27 +8,10 @@
 </head>
 <body>
 
-<h1 class="sr-only">Navigator Compass, with a home screen and three linked pages: CN, Exception and Rulebook</h1>
-
-<!-- Subtle compass silhouette used as the visual background. -->
-<div class="compass-watermark" aria-hidden="true">
-  <svg viewBox="0 0 600 600" fill="none">
-    <circle cx="300" cy="300" r="268" stroke="currentColor" stroke-width="20" opacity=".9"/>
-    <circle cx="300" cy="300" r="231" stroke="currentColor" stroke-width="20" opacity=".42"/>
-    <path d="M300 96v42M300 462v42M96 300h42M462 300h42" stroke="currentColor" stroke-width="20" stroke-linecap="round" opacity=".9"/>
-    <path d="M264 260l178-104-104 178-178 104 104-178Z" fill="currentColor" opacity=".9"/>
-    <path d="M264 260 338 334" stroke="#9BC5F5" stroke-width="11" opacity=".9"/>
-  </svg>
-</div>
-
 <section class="screen active" id="screen-home">
   <div class="home-scroll">
     <div class="hero">
-      <div class="hero-copy">
-        <p class="brand-name">Navigator</p>
-        <h2 class="app-name">Compass</h2>
-        <p>Navigate compliance with confidence.</p>
-      </div>
+      <h1 class="app-name" aria-label="COMPASS"><span>C</span><img class="wordmark-icon" src="icon.png" alt=""><span>MPASS</span></h1>
     </div>
 
     <nav class="menu-list" aria-label="Navigator Compass sections">
@@ -36,7 +19,7 @@
         <div class="menu-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
         </div>
-        <div class="menu-text"><h3>CN</h3><p>Reference codes and lookups</p></div>
+        <div class="menu-text"><h3>CN codes</h3><p>Find classifications</p></div>
         <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </button>
 
@@ -44,7 +27,7 @@
         <div class="menu-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 L21 19 H3 Z"/><path d="M12 10v4M12 17h.01"/></svg>
         </div>
-        <div class="menu-text"><h3>Exception</h3><p>Flagged items and overrides</p></div>
+        <div class="menu-text"><h3>Exceptions</h3><p>Review active overrides</p></div>
         <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </button>
 
@@ -52,7 +35,7 @@
         <div class="menu-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5C5 4 5.4 3.5 6 3.5h11c.6 0 1 .5 1 1V19a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2Z"/><path d="M8 3.5V20"/></svg>
         </div>
-        <div class="menu-text"><h3>Rulebook</h3><p>Rules and guidelines</p></div>
+        <div class="menu-text"><h3>Rulebook</h3><p>Browse policy guidance</p></div>
         <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </button>
     </nav>
@@ -63,7 +46,7 @@
   <div class="page-shell">
     <div class="page-header">
       <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <div class="page-title-group"><span class="eyebrow">NAVIGATOR COMPASS</span><h2>CN</h2><p>Reference codes and lookups</p></div>
+      <div class="page-title-group"><h2>CN codes</h2><p>Classification reference</p></div>
     </div>
     <div class="page-content">
       <div class="search-mock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Search codes</span></div>
@@ -81,7 +64,7 @@
   <div class="page-shell">
     <div class="page-header">
       <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <div class="page-title-group"><span class="eyebrow">NAVIGATOR COMPASS</span><h2>Exception</h2><p>Flagged items and overrides</p></div>
+      <div class="page-title-group"><h2>Exceptions</h2><p>Active overrides and reviews</p></div>
     </div>
     <div class="page-content">
       <div class="list-card">
@@ -98,7 +81,7 @@
   <div class="page-shell">
     <div class="page-header">
       <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <div class="page-title-group"><span class="eyebrow">NAVIGATOR COMPASS</span><h2>Rulebook</h2><p>Rules and guidelines</p></div>
+      <div class="page-title-group"><h2>Rulebook</h2><p>Trade policy guidance</p></div>
     </div>
     <div class="page-content">
       <div class="list-card">
