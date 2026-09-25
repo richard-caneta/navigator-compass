@@ -1,14 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "Navigator Compass",
-  "version": "1.0.0",
+  "name": "Compass",
+  "version": "1.1.0",
   "description": "Sidebar access to CN classification, Exception overrides, and the Rulebook.",
-  "permissions": ["sidePanel"],
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "alarms",
+    "windows"
+  ],
+  "host_permissions": [
+    "https://script.google.com/*",
+    "https://script.googleusercontent.com/*"
+  ],
   "side_panel": {
     "default_path": "sidepanel.html"
   },
   "action": {
-    "default_title": "Open Navigator Compass",
+    "default_title": "Open Compass",
     "default_icon": {
       "16": "icon.png",
       "48": "icon.png",

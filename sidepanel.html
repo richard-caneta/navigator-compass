@@ -3,34 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Navigator Compass</title>
+<title>Compass</title>
 <link rel="stylesheet" href="sidepanel.css">
 </head>
 <body>
 
+<!-- NEW HOME SCREEN -->
 <section class="screen active" id="screen-home">
   <div class="home-scroll">
     <div class="hero">
-      <h1 class="app-name" aria-label="COMPASS"><span>C</span><img class="wordmark-icon" src="icon.png" alt=""><span>MPASS</span></h1>
+      <button class="home-actions-btn" id="home-actions-btn" type="button" aria-label="Open Compass options" aria-expanded="false" aria-controls="home-actions-menu" title="Compass options">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="hero-titles">
+        <div class="brand-name">
+          <span class="brand-ap">AP</span> <span class="brand-nav">Navigator</span>
+        </div>
+        <h1 class="app-name" aria-label="COMPASS">
+          <span>C</span><img class="wordmark-icon" src="icon.png" alt=""><span>MPASS</span>
+        </h1>
+        <div class="hero-sync-status" id="hero-sync-status" aria-live="polite" aria-hidden="true">
+          <span class="sync-status-copy"><strong>Updating Compass</strong><small>Fetching the latest guide data</small></span>
+        </div>
+      </div>
+      <div class="home-actions-menu" id="home-actions-menu" role="menu" aria-label="Compass options" hidden>
+        <div class="actions-menu-heading">Compass options</div>
+        <button class="actions-menu-item" id="popout-action" type="button" role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M14 3h7v7M21 3l-9 9"/></svg>
+          <span><strong id="popout-action-label">Pop out window</strong><small id="popout-action-description">Open Compass in a separate window</small></span>
+        </button>
+        <div class="actions-menu-divider"></div>
+        <div class="actions-menu-section-label">Data</div>
+        <div class="freshness-row"><span class="freshness-label">Last data fetch</span><span id="menu-sync-time" class="freshness-value">Checking...</span></div>
+        <div class="sync-error" id="sync-error" role="alert" hidden></div>
+        <button class="actions-menu-item" id="menu-refresh-action" type="button" role="menuitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.7-4L3 10"/><path d="M3 4v6h6"/><path d="M4 13a8 8 0 0 0 14.7 4L21 14"/><path d="M21 20v-6h-6"/></svg>
+          <span><strong>Refresh data</strong><small>Manually fetch the latest data</small></span>
+        </button>
+        <div class="actions-menu-divider"></div>
+        <div class="actions-menu-meta">Compass v1.1.0 <span>Auto checks for updates every hour</span></div>
+      </div>
     </div>
-
-    <nav class="menu-list" aria-label="Navigator Compass sections">
-      <button class="menu-item" data-target="cn">
-        <div class="menu-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
-        </div>
-        <div class="menu-text"><h3>CN codes</h3><p>Find classifications</p></div>
-        <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-      </button>
-
-      <button class="menu-item" data-target="exception">
-        <div class="menu-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 L21 19 H3 Z"/><path d="M12 10v4M12 17h.01"/></svg>
-        </div>
-        <div class="menu-text"><h3>Exceptions</h3><p>Review active overrides</p></div>
-        <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-      </button>
-
+    <nav class="menu-list" aria-label="Compass sections">
       <button class="menu-item" data-target="rulebook">
         <div class="menu-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5C5 4 5.4 3.5 6 3.5h11c.6 0 1 .5 1 1V19a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2Z"/><path d="M8 3.5V20"/></svg>
@@ -38,24 +52,44 @@
         <div class="menu-text"><h3>Rulebook</h3><p>Browse policy guidance</p></div>
         <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </button>
+      <button class="menu-item" data-target="cn">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
+        </div>
+        <div class="menu-text"><h3>CN Guide</h3><p>Select the scenario to get guidance</p></div>
+        <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </button>
+      <button class="menu-item" data-target="exception">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 L21 19 H3 Z"/><path d="M12 10v4M12 17h.01"/></svg>
+        </div>
+        <div class="menu-text"><h3>Exceptions</h3><p>Review active overrides</p></div>
+        <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </button>
     </nav>
+    
+    <button class="refresh-btn" id="btn-force-refresh" aria-label="Refresh Data" title="Refresh data" hidden>
+        <svg class="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"></path>
+          <path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"></path>
+        </svg>
+        <div class="btn-loader"></div>
+    </button>
   </div>
 </section>
 
+<!-- PLACEHOLDER PAGES (CN & Exception) -->
 <section class="screen" id="screen-cn">
   <div class="page-shell">
     <div class="page-header">
-      <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <div class="page-title-group"><h2>CN codes</h2><p>Classification reference</p></div>
-    </div>
-    <div class="page-content">
-      <div class="search-mock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Search codes</span></div>
-      <div class="list-card">
-        <div class="list-row"><span class="code-tag">8471.30</span><div class="row-text"><h4>Portable computers</h4><p>Reduced duty rate applies</p></div></div>
-        <div class="list-row"><span class="code-tag">8517.12</span><div class="row-text"><h4>Mobile phones</h4><p>Standard classification</p></div></div>
-        <div class="list-row"><span class="code-tag">6109.10</span><div class="row-text"><h4>Cotton t-shirts</h4><p>Preferential origin required</p></div></div>
-        <div class="list-row"><span class="code-tag">9403.60</span><div class="row-text"><h4>Wooden furniture</h4><p>Additional documentation needed</p></div></div>
-      </div>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <button class="breadcrumb-link" type="button" data-breadcrumb-home>Home</button>
+        <span class="breadcrumb-separator" aria-hidden="true">&rsaquo;</span>
+        <span class="breadcrumb-current" aria-current="page">CN Guide</span>
+      </nav>
+      <div class="page-title-group"><h2>CN Guide</h2><p>Credit & Debit Note decision assistant</p></div>
     </div>
   </div>
 </section>
@@ -63,37 +97,120 @@
 <section class="screen" id="screen-exception">
   <div class="page-shell">
     <div class="page-header">
-      <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <button class="breadcrumb-link" type="button" data-breadcrumb-home>Home</button>
+        <span class="breadcrumb-separator" aria-hidden="true">&rsaquo;</span>
+        <span class="breadcrumb-current" aria-current="page">Exceptions</span>
+      </nav>
       <div class="page-title-group"><h2>Exceptions</h2><p>Active overrides and reviews</p></div>
-    </div>
-    <div class="page-content">
-      <div class="list-card">
-        <div class="list-row"><div class="row-text"><h4>Preferential origin waiver</h4><p>Applies to shipment batch 4471</p></div><span class="badge badge-success">Active</span></div>
-        <div class="list-row"><div class="row-text"><h4>Anti-dumping duty override</h4><p>Awaiting compliance sign-off</p></div><span class="badge badge-warning">Pending</span></div>
-        <div class="list-row"><div class="row-text"><h4>Quota exemption</h4><p>Expired at end of quarter</p></div><span class="badge badge-neutral">Expired</span></div>
-        <div class="list-row"><div class="row-text"><h4>Manual reclassification</h4><p>Requested by trade desk</p></div><span class="badge badge-warning">Pending</span></div>
-      </div>
     </div>
   </div>
 </section>
 
+<!-- LIVE RULEBOOK ENGINE -->
 <section class="screen" id="screen-rulebook">
   <div class="page-shell">
     <div class="page-header">
-      <button class="back-btn" data-back aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <div class="page-title-group"><h2>Rulebook</h2><p>Trade policy guidance</p></div>
-    </div>
-    <div class="page-content">
-      <div class="list-card">
-        <div class="list-row"><span class="chapter-num">1</span><div class="row-text"><h4>General provisions</h4><p>Scope and definitions</p></div></div>
-        <div class="list-row"><span class="chapter-num">2</span><div class="row-text"><h4>Classification rules</h4><p>How codes are assigned</p></div></div>
-        <div class="list-row"><span class="chapter-num">3</span><div class="row-text"><h4>Origin determination</h4><p>Preferential and non-preferential</p></div></div>
-        <div class="list-row"><span class="chapter-num">4</span><div class="row-text"><h4>Valuation methods</h4><p>Customs value calculation</p></div></div>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <button class="breadcrumb-link" type="button" data-breadcrumb-home>Home</button>
+        <span class="breadcrumb-separator" aria-hidden="true">&rsaquo;</span>
+        <span class="breadcrumb-current" aria-current="page">Rulebook</span>
+      </nav>
+      <div class="page-title-group">
+        <h2>Rulebook</h2>
+        <p>Interactive rules and guidelines</p>
       </div>
+    </div>
+    
+    <div class="page-content" id="rulebook-app-container">
+      
+      <!-- Loading State -->
+      <div id="loader" style="text-align: center; padding: 40px 20px;">
+        <div class="modern-loader" style="justify-content: center;"><span></span><span></span><span></span></div>
+        <p id="loader-text" style="color: var(--muted); font-size: 11px; font-weight: 700; margin-top: 10px; letter-spacing: 1px;">SYNCING ENGINE...</p>
+      </div>
+
+      <!-- RULEBOOK WELCOME MENU -->
+      <div id="rulebook-welcome-view" style="display: none;">
+        <button id="btn-browse-main" class="primary-action-btn">
+          <span class="primary-action-icon">&#9776;</span>
+          <span><strong>Browse main rulebook</strong><small>PSO &middot; TRS &middot; MNR &middot; TES</small></span>
+          <span class="primary-action-arrow">&rarr;</span>
+        </button>
+
+        <div class="section-title resource-heading"><span>Additional resources</span><span class="resource-count" id="resource-count"></span></div>
+        <div id="secondary-modules-list" class="secondary-modules-grid"></div>
+      </div>
+
+      <!-- RULEBOOK DATA BROWSER -->
+      <div id="rulebook-data-view" style="display: none;">
+        <div class="data-view-header">
+          <h3 id="data-view-title">Main Rulebook</h3>
+        </div>
+
+        <div class="search-mock rulebook-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" id="mainSearch" placeholder="Search by rule, country, vendor..." autocomplete="off">
+          <span class="clear-icon" id="clearBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>
+        </div>
+
+        <!-- Compact Filters -->
+        <div id="filter-section" style="display: none;">
+          <div class="filter-group">
+            <label class="filter-label">Category</label>
+            <select id="catFilter" class="filter-dropdown"><option value="">All</option></select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Country</label>
+            <select id="countryFilter" class="filter-dropdown"><option value="">All</option></select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Vendor</label>
+            <select id="vendorFilter" class="filter-dropdown"><option value="">All</option></select>
+          </div>
+          <div class="filter-actions">
+            <button id="resetFiltersBtn" class="reset-filters-btn">Clear</button>
+          </div>
+        </div>
+
+        <div id="results-section">
+          <div class="results-toolbar"><div id="resultStats" class="result-stats"></div></div>
+          <div id="resultsList"></div>
+          <div id="pagination" class="pagination"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- Floating Bottom Navigation -->
+<div class="floating-nav" id="floatingNav">
+  <button class="nav-btn" id="navBackBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    Back
+  </button>
+  <div class="nav-divider"></div>
+  <button class="nav-btn" id="navHomeBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Home
+  </button>
+</div>
+
+<!-- Rulebook Detail Modal -->
+<div id="detailModal" class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Rule Details</h2>
+      <button class="close-btn" id="closeModalBtn" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
 <script src="sidepanel.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,16 +1,16 @@
-# Navigator Compass — Capgemini-inspired workspace
+# AP Navigator Compass – Capgemini-inspired light theme
 
-A Chrome side-panel mockup for Navigator Compass.
+A Chrome side-panel mockup for AP Navigator Compass.
 
 ## Visual direction
-
-- Modern blue-led workspace with a restrained violet accent
-- Focused Navigator hero and concise action labels
-- Supplied Compass icon integrated into the wordmark with a soft gradient background
-- Crisp cards, compact type, and understated interaction states
+- White-first, clean enterprise interface
+- Capgemini-inspired dark/light blue accent palette
+- Large editorial hero typography
+- Subtle compass silhouette watermark
+- White cards with restrained shadows and blue interaction states
+- No purple accents
 
 ## Load in Chrome
-
 1. Extract this ZIP.
 2. Open `chrome://extensions`.
 3. Enable Developer mode.
